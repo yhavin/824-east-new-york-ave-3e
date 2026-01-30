@@ -146,7 +146,7 @@ st.set_page_config(
 )
 
 hero_section = st.container()
-hero_title, hero_carousel = hero_section.columns([3, 5])
+hero_title, hero_carousel = hero_section.columns([4, 5])
 
 with hero_title:
     st.header(":blue[824 East New York Ave 3E]", divider="blue")
@@ -154,10 +154,6 @@ with hero_title:
     st.badge("$2,588 rent")
     st.caption("Available March 1, 2026")
     st.badge("600 sqft | 4 rooms | 1 bed | 1 bath")
-
-    st.video(
-        data="https://www.youtube.com/watch?v=EVBsLhNP8EU"
-    )
 
     button1, button2 = st.columns([3, 2], width=300)
     button1.link_button(
@@ -169,6 +165,10 @@ with hero_title:
         label="💬 Text Yakir",
         type="secondary",
         url="sms:+19179150430?body=Hi Yakir, I'm inquiring about 824 East New Ave 3E. My name is"
+    )
+
+    st.video(
+        data="https://www.youtube.com/watch?v=EVBsLhNP8EU"
     )
 
     st.caption("More information below images.")
@@ -201,6 +201,8 @@ if is_mobile:
         type="secondary",
         url="sms:+19179150430?body=Hi Yakir, I'm inquiring about 824 East New Ave 3E. My name is"
     )
+
+st.divider()
 
 st.header(
     body="About",
@@ -271,3 +273,9 @@ button2.link_button(
     type="secondary",
     url="sms:+19179150430?body=Hi Yakir, I'm inquiring about 824 East New Ave 3E. My name is"
 )
+
+st.divider()
+
+st.caption("Disclaimer: I (Yakir Havin) am not a real estate broker nor do I represent this building.")
+st.caption("I have lived in this apartment for the past year and have been extremely happy here.")
+st.caption("I am moving out to a larger apartment and am looking for a tenant to start a new lease.")
