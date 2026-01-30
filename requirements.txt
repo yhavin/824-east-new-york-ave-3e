@@ -1,2 +1,3 @@
 streamlit
 streamlit-carousel==1.1.2
+streamlit-js-eval

@@ -1,11 +1,18 @@
 import streamlit as st
 from streamlit_carousel import carousel
+from streamlit_js_eval import streamlit_js_eval
 
 
 
 # =======================
 # Constants
 # =======================
+screen_width = streamlit_js_eval(js_expressions='screen.width', key='SCR')
+if screen_width and screen_width < 768:
+    is_mobile = True
+else:
+    is_mobile = False
+
 images = [
     {
         "text": "Kitchen",
@@ -167,27 +174,34 @@ with hero_title:
     st.caption("More information below images.")
 
 with hero_carousel:
+    st.title(f"Width: {screen_width}")
+    if is_mobile:
+        height = 500
+    else:
+        height = 700
+        
     carousel(
         items=images,
         slide=False,
         interval=3000,
         wrap=True,
         pause="hover",
-        container_height=800,
+        container_height=height,
         width=1
     )
 
-button1, button2 = st.columns([3, 2], width=300)
-button1.link_button(
-    label="📱 WhatsApp Yakir",
-    type="primary",
-    url="https://wa.link/wvd9dq"
-)
-button2.link_button(
-    label="💬 Text Yakir",
-    type="secondary",
-    url="sms:+19179150430?body=Hi Yakir, I'm inquiring about 824 East New Ave 3E. My name is"
-)
+if is_mobile:
+    button1, button2 = st.columns([3, 2], width=300)
+    button1.link_button(
+        label="📱 WhatsApp Yakir",
+        type="primary",
+        url="https://wa.link/wvd9dq"
+    )
+    button2.link_button(
+        label="💬 Text Yakir",
+        type="secondary",
+        url="sms:+19179150430?body=Hi Yakir, I'm inquiring about 824 East New Ave 3E. My name is"
+    )
 
 st.header(
     body="About",
