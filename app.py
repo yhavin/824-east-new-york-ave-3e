@@ -130,16 +130,13 @@ images = [{**image, "title": i + 1} for i, image in enumerate(images)]
 # =======================
 st.set_page_config(
     page_title="824 East New York Ave 3E",
-    layout="wide"
+    layout="wide",
+    menu_items={
+        "Get help": None,
+        "Report a bug": None,
+        "About": "824 East New York Ave 3E"
+    }
 )
-
-hide_streamlit_style = """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    </style>
-    """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 hero_section = st.container()
 hero_title, hero_carousel = hero_section.columns([3, 5])
