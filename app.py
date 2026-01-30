@@ -133,6 +133,14 @@ st.set_page_config(
     layout="wide"
 )
 
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 hero_section = st.container()
 hero_title, hero_carousel = hero_section.columns([3, 5])
 
