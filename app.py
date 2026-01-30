@@ -174,7 +174,6 @@ with hero_title:
     st.caption("More information below images.")
 
 with hero_carousel:
-    st.title(f"Width: {screen_width}")
     if is_mobile:
         height = 500
     else:
