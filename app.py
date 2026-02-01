@@ -182,7 +182,6 @@ with hero_carousel:
     carousel(
         items=images,
         slide=False,
-        interval=3000,
         wrap=True,
         pause="hover",
         container_height=height,
